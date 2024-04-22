@@ -61,17 +61,17 @@
                 
                 <!-- contacts -->
                 <div class="contacts">
-                    <div class="user flex">
-                        <img class="user-photo" src="./img/avatar_1.jpg" alt="">
+                    <div class="user flex" v-for="curContact in contacts">
+                        <img class="user-photo" :src="`./img/avatar` + curContact.avatar + `.jpg`" alt="">
                         <div class="user-status">
-                            <h2>Michele</h2>
+                            <h2>{{ curContact.name }}</h2>
                             <p>Lorem ipsum dolor sit amet</p>
                         </div>
                         <div class="time">
                             <p>16:15</p>
                         </div>
                     </div>
-                    <div class="user flex">
+                    <!-- <div class="user flex">
                         <img class="user-photo" src="./img/avatar_2.jpg" alt="">
                         <div class="user-status">
                             <h2>Fabio</h2>
@@ -140,7 +140,7 @@
                         <div class="time">
                             <p>15:15</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
