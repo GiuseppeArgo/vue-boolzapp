@@ -166,10 +166,12 @@
                 <!-- chat screen -->
                 <div class="chat-screen">
                     <div class="msg-container">
-                        <div class="row">
-                            <div class="your msg">
+                        <div class="row" v-for="currMessage in contacts[activeIndex].messages">
+                            
+                            <!-- sent messages -->
+                            <div  v-if="currMessage.status === `sent`" class="your msg">
                                 <div class="msg-text">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, sint nostrum quaerat, aspernatur perferendis quia totam esse soluta, quidem pariatur reprehenderit quasi debitis quam saepe ipsa dignissimos corrupti! Laborum, ab.</p>
+                                    <p>{{ currMessage.message }}</p>
                                 </div>
                                 <div class="msg-time flex">
                                     <button class="dropdown">
@@ -181,20 +183,36 @@
                                             </ul>
                                         </div>
                                     </button>
-                                    <p>16:30</p>
+                                    <p>{{ currMessage.date }}</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="other msg">
-                            <div class="msg-text">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, sint nostrum quaerat, aspernatur perferendis quia totam esse soluta, quidem pariatur reprehenderit quasi debitis quam saepe ipsa dignissimos corrupti! Laborum, ab.</p>
+                            <!-- /sent messages -->
+                            
+                            <!-- received messages -->
+    
+                            <div v-else class="other msg">
+                                <div class="msg-text">
+                                    <p>{{ currMessage.message }}</p>
+                                </div>
+                                <div class="msg-time flex">
+                                    <button class="dropdown">
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                        <div class="dropdown-content">
+                                            <ul>
+                                                <li>Info messaggio</li>
+                                                <li>Cancella messaggio</li>
+                                            </ul>
+                                        </div>
+                                    </button>
+                                    <p>{{ currMessage.date }}</p>
+                                </div>
                             </div>
-                            <div class="msg-time flex">
-                                <button><i class="fa-solid fa-chevron-down"></i></button>
-                                <p>16:30</p>
-                            </div>
+    
+                            <!-- /received messages -->
                         </div>
-                        <div class="row">
+                        
+
+                        <!-- <div class="row">
                             <div class="your msg">
                                 <div class="msg-text">
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, nostrum nihil. Quidem totam, ullam et minima cupiditate incidunt neque magnam. Illum veniam alias sint tempora eius quis minus sit similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quam id pariatur sunt nesciunt placeat est blanditiis inventore laborum, quo quod natus quae ratione ab aut soluta? Incidunt, reprehenderit officia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, sint nostrum quaerat, aspernatur perferendis quia totam esse soluta, quidem pariatur reprehenderit quasi debitis quam saepe ipsa dignissimos corrupti! Laborum, ab.</p>
@@ -233,7 +251,7 @@
                                     <p>16:30</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 

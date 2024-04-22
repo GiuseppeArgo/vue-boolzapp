@@ -227,12 +227,13 @@ header button {
 }
 
 .msg {
-    width: 70%;
+    max-width: 50%;
     display: flex;
     margin-top: 30px;
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 30px;
+    justify-content: space-between;
 }
 
 .msg-time {
@@ -254,12 +255,12 @@ header button {
 }
 
 .row {
-    display: flex;
-    justify-content: flex-end;
+    display: grid;
 }
 
 .your { 
     background-color: #d5f9ba;
+    justify-self: end;
 }
 
 .other {
@@ -271,6 +272,10 @@ header button {
     display: inline-block;
 }
   
+.dropdown i {
+    padding-left: 90px;
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
