@@ -61,7 +61,7 @@
                 
                 <!-- contacts -->
                 <div class="contacts">
-                    <div class="user flex" v-for="curContact in contacts">
+                    <div class="user flex" v-for="(curContact, index) in contacts" @click.stop="activeIndex = index">
                         <img class="user-photo" :src="`./img/avatar` + curContact.avatar + `.jpg`" alt="">
                         <div class="user-status">
                             <h2>{{ curContact.name }}</h2>
@@ -150,9 +150,10 @@
                 <!-- chat header -->
                 <header class="chat-header">
                     <div class="user flex">
-                        <img class="user-photo" src="./img/avatar_1.jpg" alt="">
+                        <img class="user-photo" :src="'img/avatar' + contacts[activeIndex].avatar + '.jpg'"
+                        alt="">
                         <div class="user-status">
-                            <h2>Michele</h2>
+                            <h2>{{ contacts[activeIndex].name }}</h2>
                             <p>Ultimo accesso oggi alle 16:26</p>
                         </div>
                     </div>
