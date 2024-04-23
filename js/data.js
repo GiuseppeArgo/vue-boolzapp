@@ -177,6 +177,15 @@ Vue.createApp({
                 message: this.newMessage,
                 status: "sent",
             })
+            
+            setTimeout(() => {
+                this.contacts[this.activeIndex].messages.push({
+                    date: "10/01/2020 15:51:00",
+                    message: "ok!",
+                    status: "received",
+                });
+            }, 2000); 
+            
             this.newMessage = ""; 
         },
     },
