@@ -1,7 +1,7 @@
 Vue.createApp({
     data () {
         return {
-
+            newMessage: "",
             activeIndex: 0,
             contacts: [
                 {
@@ -170,7 +170,15 @@ Vue.createApp({
         }
     },
     methods: {
-
-    }
+        sendMsg(){
+            //console.log("sent");
+            this.contacts[this.activeIndex].messages.push({
+                date:"10/01/2020 16:35:00",
+                message: this.newMessage,
+                status: "sent",
+            })
+            this.newMessage = ""; 
+        },
+    },
 }).mount("#app")
 

@@ -311,9 +311,13 @@ header button {
     color: #6b7376;
 }
 
-.chat-footer input {
+.chat-footer form {
     width: 85%;
+}
+
+.chat-footer input {
     padding: 20px 10px;
+    width: 100%;
     border: none;
     border-radius: 5px;
     font-size: 1rem;
