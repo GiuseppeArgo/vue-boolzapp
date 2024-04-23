@@ -1,6 +1,7 @@
 Vue.createApp({
     data () {
         return {
+            contact: "",
             newMessage: "",
             activeIndex: 0,
             contacts: [
@@ -188,6 +189,23 @@ Vue.createApp({
             
             this.newMessage = ""; 
         },
+
+        handleSearch(){
+            if (this.contact !== "") {
+                this.contacts.forEach(curContact => {
+                    const name = curContact.name.toLowerCase();
+                    if (name.includes(this.contact.toLowerCase())) {
+                        curContact.visible = true;
+                    } else {
+                        curContact.visible = false;
+                    }
+                });
+            } else {
+                this.contacts.forEach(curContact => {
+                    curContact.visible = true;
+                });
+            };
+        }
     },
 }).mount("#app")
 

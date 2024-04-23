@@ -54,14 +54,14 @@
                 <div class="search-bar flex">
                     <div class="search flex">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" name="s-chat" id="s-chat" aria-label="s-chat" placeholder="Cerca o inzia una nuova chat">
+                        <input v-model="contact" @input="handleSearch" type="text" name="s-chat" id="s-chat" aria-label="s-chat" placeholder="Cerca o inzia una nuova chat">
                     </div>    
                 </div>
 
                 
                 <!-- contacts -->
                 <div class="contacts">
-                    <div class="user flex" v-for="(curContact, index) in contacts" @click.stop="activeIndex = index">
+                    <div class="user flex" v-for="(curContact, index) in contacts" @click.stop="activeIndex = index" v-show="curContact.visible">
                         <img class="user-photo" :src="`./img/avatar` + curContact.avatar + `.jpg`" :alt="`Avatar di ${curContact.name}`">
                         <div class="user-status">
                             <h2>{{ curContact.name }}</h2>
